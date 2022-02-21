@@ -67,6 +67,7 @@ const variable = {
   tomato: "#ff6347",
   yellowgreen: "#9acd32",
   darkmode: "#151519",
+  lightmode: "#F6FAF9",
 
   // desktop fontSize
   d10px: "0.63rem",
