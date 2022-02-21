@@ -67,15 +67,37 @@ export const GlobalStyle = createGlobalStyle`
     h1,
     h2,
     h3 {
-      color: ${variable.white};
+      color: ${variable.lightmode};
     }
 
-    p {
-      color: ${variable.lightgray};
+    p,
+    span {
+      color: ${variable.lightmode};
     }
 
     a {
-      color: ${variable.steelblue};
+      color: ${variable.lightmode};
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    body {
+    background: ${variable.lightmode};
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: ${variable.darkmode};
+    }
+
+    p,
+    span {
+      color: ${variable.darkmode};
+    }
+
+    a {
+      color: ${variable.darkmode};
     }
   }
 `;
