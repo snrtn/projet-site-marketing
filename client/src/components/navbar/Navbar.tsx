@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 // style
+import styled from "styled-components";
 import {
   Container,
   Wrapper,
@@ -12,12 +13,58 @@ import {
   SubTitle,
   Right,
   Menu,
-  Item,
   Icon,
   Burger,
 } from "./navbar.style";
+import variable from "../../styles/variable";
+import { r768px } from "../../styles/responsive";
 
 type Props = {};
+
+const Item = styled.a`
+  width: 85px;
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: ${variable.d18px};
+  ${r768px({
+    color: variable.lightmode,
+    fontSize: variable.m24px,
+  })}
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: attr(data-link);
+    width: 100%;
+    transition: all 0.75s;
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    top: 100%;
+    left: 0;
+    color: ${variable.orange};
+  }
+
+  &:hover:before {
+    @media (hover: hover) {
+      top: -100%;
+    }
+  }
+  &:hover:after {
+    @media (hover: hover) {
+      top: 0;
+    }
+  }
+`;
 
 const Navbar = (props: Props) => {
   const [open, setOpen] = useState(false);
@@ -37,12 +84,12 @@ const Navbar = (props: Props) => {
         </Left>
         <Right>
           <Menu open={open}>
-            <Item onClick={toggleOpen}>홈</Item>
-            <Item onClick={toggleOpen}>소개</Item>
-            <Item onClick={toggleOpen}>주간일정</Item>
-            <Item onClick={toggleOpen}>이용시설</Item>
-            <Item onClick={toggleOpen}>오시는길</Item>
-            <Item onClick={toggleOpen}>상담</Item>
+            <Item onClick={toggleOpen} data-link="Home"></Item>
+            <Item onClick={toggleOpen} data-link="Introduce"></Item>
+            <Item onClick={toggleOpen} data-link="주간일정"></Item>
+            <Item onClick={toggleOpen} data-link="이용시설"></Item>
+            <Item onClick={toggleOpen} data-link="오시는길"></Item>
+            <Item onClick={toggleOpen} data-link="Contact"></Item>
           </Menu>
 
           <Icon onClick={() => setOpen(!open)}>

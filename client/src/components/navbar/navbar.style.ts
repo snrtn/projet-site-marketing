@@ -59,7 +59,6 @@ export const Right = styled.div`
   display: flex;
   justify-content: right;
   align-items: center;
-  position: relative;
   ${r768px({
     flex: "0.2",
     paddingRight: "20px",
@@ -85,38 +84,11 @@ export const Menu = styled.div<open>`
     width: 250px;
     padding-top: 3.5rem;
     margin-left: 0px;
+    z-index: 99;
     justify-content: normal;
     transition: all 0.3s linear;
-    border-left: 1px solid ${variable.lightgray};
-  }
-`;
-export const Item = styled.a`
-  display: inline-block;
-  margin: 0px 20px;
-  cursor: pointer;
-  position: relative;
-  font-size: ${variable.d16px};
-  ${r768px({
-    fontSize: variable.m24px,
-    marginTop: "20px",
-  })}
-  &:before {
-    @media (hover: hover) {
-      content: "";
-      position: absolute;
-      background-color: ${variable.orange};
-      height: 1px;
-      width: 0;
-      bottom: -3px;
-      transition: all 0.3s linear;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-  &:hover:before {
-    @media (hover: hover) {
-      width: 100%;
-    }
+    border-left: 1px solid ${variable.lightmode};
+    background-color: ${variable.darkmode};
   }
 `;
 
