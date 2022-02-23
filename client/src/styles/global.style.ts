@@ -44,17 +44,16 @@ export const GlobalStyle = createGlobalStyle`
 
   /* scroll bar */
   body::-webkit-scrollbar {  
-    width: 12px;
+    width: 15px;
   }
 
   body::-webkit-scrollbar-thumb {
     background-color: ${variable.darkmode};
-    border: 1px solid ${variable.lightgray};
-    border-radius: 3px;  
+    border: 0.5px solid ${variable.lightmode};
   }
 
   body::-webkit-scrollbar-track {  
-    background-color: ${variable.lightgray};
+    background-color: ${variable.lightmode};
     border: none;
   }
 

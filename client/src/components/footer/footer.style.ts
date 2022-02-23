@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import variable from "../../styles/variable";
-import { r768px } from "../../styles/responsive";
+import { r768px, r1280px } from "../../styles/responsive";
 
 export const Container = styled.div`
   display: flex;
@@ -18,12 +18,14 @@ export const Wrapper = styled.div`
     flexDirection: "column",
     height: "100%",
   })}
+  ${r1280px({
+    height: "100%",
+  })}
 `;
 
 export const Left = styled.div`
   flex: 1;
   height: inherit;
-  flex-direction: column;
   padding: 20px 0px 0px 20px;
   border-right: 1.2px solid #00000010;
   margin-right: 20px;
@@ -34,29 +36,55 @@ export const Left = styled.div`
     marginRight: "0px",
     paddingBottom: "20px",
   })}
-
-  p {
-    color: ${variable.darkmode};
-    margin-top: 15px;
-    font-weight: 400;
-    font-size: ${variable.d16px};
-    ${r768px({
-      fontSize: variable.m18px,
-    })}
-  }
 `;
 export const Title = styled.h1`
   color: ${variable.darkmode};
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: ${variable.d18px};
   ${r768px({
     fontSize: variable.m20px,
   })}
 `;
-export const Number = styled.p``;
-export const Tel = styled.p``;
-export const Email = styled.p`
+export const DescContainer = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  ${r768px({
+    flexWrap: "nowrap",
+    flexDirection: "column",
+    paddingRight: "20px",
+  })}
+  ${r1280px({
+    flexWrap: "nowrap",
+    flexDirection: "column",
+    paddingRight: "20px",
+  })}
+`;
+export const Desc = styled.li`
+  width: 50%;
+  margin-bottom: 10px;
+  font-size: ${variable.d16px};
+  ${r768px({
+    width: "100%",
+    fontSize: variable.m18px,
+  })}
+  ${r1280px({
+    width: "100%",
+    fontSize: variable.m18px,
+  })}
+`;
+export const Email = styled.li`
+  font-size: ${variable.d16px};
+  ${r768px({
+    fontSize: variable.m18px,
+    marginBottom: "10px",
+  })}
+  ${r1280px({
+    marginBottom: "10px",
+  })}
   a {
     color: ${variable.steelblue};
     &:hover {
@@ -73,12 +101,16 @@ export const Center = styled.div`
   padding: 20px 0px 0px 20px;
   border-right: 1.2px solid #00000010;
   margin-right: 20px;
+
   ${r768px({
     width: "100%",
     borderRight: "none",
     borderBottom: "1.2px solid #00000010",
     marginRight: "0px",
     paddingBottom: "20px",
+  })}
+  ${r1280px({
+    height: "205px",
   })}
 `;
 export const TitleLink = styled.h3`
@@ -222,7 +254,7 @@ export const TitleSns = styled.h3`
   })}
 `;
 
-export const Desc = styled.p`
+export const Copyright = styled.p`
   margin-top: 25px;
   color: ${variable.darkmode};
 `;

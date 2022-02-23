@@ -84,12 +84,12 @@ const Navbar = (props: Props) => {
         </Left>
         <Right>
           <Menu open={open}>
-            <Item onClick={toggleOpen} data-link="Home"></Item>
-            <Item onClick={toggleOpen} data-link="Introduce"></Item>
+            <Item onClick={toggleOpen} data-link="HOME"></Item>
+            <Item onClick={toggleOpen} data-link="소개"></Item>
             <Item onClick={toggleOpen} data-link="주간일정"></Item>
             <Item onClick={toggleOpen} data-link="이용시설"></Item>
             <Item onClick={toggleOpen} data-link="오시는길"></Item>
-            <Item onClick={toggleOpen} data-link="Contact"></Item>
+            <Item onClick={toggleOpen} data-link="상담"></Item>
           </Menu>
 
           <Icon onClick={() => setOpen(!open)}>

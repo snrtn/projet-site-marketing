@@ -5,8 +5,8 @@ import {
   Wrapper,
   Left,
   Title,
-  Tel,
-  Number,
+  DescContainer,
+  Desc,
   Email,
   Center,
   TitleLink,
@@ -14,7 +14,7 @@ import {
   ListItem,
   Right,
   TitleSns,
-  Desc,
+  Copyright,
 } from "./footer.style";
 
 type Props = {};
@@ -24,21 +24,25 @@ const Footer = (props: Props) => {
     <Container>
       <Wrapper>
         <Left>
-          <Title>Ssangmun Ju-jitsu | Gile Ribeiro Korea</Title>
-          <Number>Business number : </Number>
-          <Tel>Phone number : </Tel>
-          <Email>
-            Email de Développer React :{" "}
-            <a
-              href="mailto:hanjun.kim.dev@gmail.com"
-              style={{ cursor: "pointer" }}
-            >
-              hanjun.kim.dev@gmail.com
-            </a>
-          </Email>
+          <Title>쌍문주짓수 | 질리히베이로 코리아</Title>
+          <DescContainer>
+            <Desc>대표자 : 박신용</Desc>
+            <Desc>사업자번호 : 513-81-68640</Desc>
+            <Desc>전화번호 : 111-1111-1111</Desc>
+            <Email>
+              이메일 :{" "}
+              <a
+                href="mailto:hanjun.kim.dev@gmail.com"
+                style={{ cursor: "pointer" }}
+              >
+                email@gmail.com
+              </a>
+            </Email>
+            <Desc>주소 : </Desc>
+          </DescContainer>
         </Left>
         <Center>
-          <TitleLink>Useful Links</TitleLink>
+          <TitleLink>유용한 링크</TitleLink>
           <List>
             <ListItem>소개</ListItem>
             <ListItem>주간일정</ListItem>
@@ -48,7 +52,7 @@ const Footer = (props: Props) => {
           </List>
         </Center>
         <Right>
-          <TitleSns>Contact Us</TitleSns>
+          <TitleSns>SNS 및 상담</TitleSns>
           <div className="sns">
             <button className="icon" onClick={() => window.open("", "_blank")}>
               <i className="fa fa-brands fa-instagram"></i>
@@ -60,7 +64,7 @@ const Footer = (props: Props) => {
               <i className="fa fa-solid fa-comment-dots"></i>
             </button>
           </div>
-          <Desc>© 2022.All rights reserved.</Desc>
+          <Copyright>© 2022.All rights reserved.</Copyright>
         </Right>
       </Wrapper>
     </Container>
