@@ -12,7 +12,7 @@ function App() {
     <Container>
       <GlobalStyle />
       <Navbar />
-
+      {/* text commit */}
       <Home />
       <Footer />
     </Container>
